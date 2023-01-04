@@ -2,7 +2,7 @@ import React from "react";
 
 const Input = React.forwardRef(({ placeholder, type, children }, ref) => {
   return (
-    <div className="flex flex-col gap-[.5em] w-[45%] ">
+    <div className="flex flex-col gap-[.5em] w-[100%] xl2:w-[45%] ">
       <label className="text-[#1e1e1e] font-[500] text-[1.1em] ">
         {children}
       </label>

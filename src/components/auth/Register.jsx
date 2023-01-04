@@ -6,6 +6,7 @@ import { useNavigate, Link } from "react-router-dom";
 
 //importing components
 import Input from "./Input";
+import Button from "../UI/Button";
 
 //importing api function
 import { loginHandler } from "../../API/authAPI";
@@ -79,7 +80,7 @@ const Register = () => {
   const rowsClassName = `flex flex-col xl2:flex-row items-center justify-between w-[100%]`;
 
   return (
-    <div className="w-[100%] ">
+    <div className="w-[100%]">
       {isPending && !data && !error && <h1>Registering...</h1>}
       {error && !data && !isPending && <h1>Register Unsuccessful</h1>}
       {data && !isPending && <h1>Register Successful...</h1>}
@@ -87,6 +88,7 @@ const Register = () => {
       <form
         onSubmit={submitFormHandler}
         className="flex flex-col items-center gap-[1em] w-[100%] xl2:w-[60%] mx-auto mb-[7em]"
+        style={{ backgroundColor: "red" }}
       >
         <p className="font-bold text-[28px] mb-[1em]">Sign Up!</p>
         <div className="flex flex-col gap-[1em]">
@@ -139,7 +141,7 @@ const Register = () => {
           </div>
           <div className="flex items-start justify-center gap-6 my-[2em]">
             <input
-              className="w-[30px] h-[30px] border border-solid border-black "
+              className="xl2:w-[35px] xl2:h-[35px] h-[50px] w-[50px] border border-solid border-black "
               type="checkbox"
               ref={areyouSureRef}
             />
@@ -152,9 +154,9 @@ const Register = () => {
           </div>
         </div>
         <div className="flex flex-col items-center mx-auto gap-2">
-          <button className="flex items-center justify-center h-[3em] bg-[#10328C] text[20px] text-white rounded-md hover:bg-[#5d8aa8] w-[100%] xl2:w-[500px]">
+          <Button width={"100%"} type="submit">
             Sign Up
-          </button>
+          </Button>
           <p>
             Already have an account?{" "}
             <Link className="text-[blue] font-[500]">Log In</Link>
