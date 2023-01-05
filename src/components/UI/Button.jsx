@@ -1,3 +1,29 @@
+//importing from style-components
+import styled from "styled-components";
+
+const ButtonControl = styled.button`
+  & {
+    height: ${({ height }) => (height ? height : "3em")};
+
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+
+    background-color: ${(props) => props.backgroundColor || "#10328C"};
+    color: ${(props) => props.color || "#ffffff"};
+    padding: 1em;
+    width: ${(props) => props.width};
+    border-radius: 8px;
+    margin: 1em;
+    font-size: 1.2em;
+    border: ${(props) => props.border || 0};
+    cursor: pointer;
+  }
+  &:hover {
+    background-color: ${({ hoverColor }) => hoverColor || "#090e47"};
+  }
+`;
 const Button = ({
   backgroundColor,
   children,
@@ -6,20 +32,20 @@ const Button = ({
   hoverColor,
   color,
   type,
+  border,
 }) => {
   return (
-    <button
-      className={`p-[1em] w-[${width}] h-[${
-        height ? height : "3em"
-      }]flex items-center justify-center bg-[${
-        backgroundColor ? backgroundColor : "#102d8c"
-      }] hover:bg-[${hoverColor ? hoverColor : "#090e47"}] rounded-md text-${
-        color ? color : "white"
-      } hover:bg-[#090e47]`}
+    <ButtonControl
       type={type && type}
+      backgroundColor={backgroundColor}
+      height={height}
+      border={border}
+      color={color}
+      hoverColor={hoverColor}
+      width={width}
     >
       {children}
-    </button>
+    </ButtonControl>
   );
 };
 

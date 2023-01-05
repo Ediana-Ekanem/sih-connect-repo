@@ -2,12 +2,11 @@ import React, { Fragment } from "react";
 
 //importing from react-router-dom
 import { Link } from "react-router-dom";
+import { BsArrowRightShort } from "react-icons/bs";
 
 //importing components
-import { buttonData } from "./btnData";
-import DefaultBtn from "./DefaultBtn";
+import Button from "../UI/Button";
 import SIHConnect from "../../assets/starthubconnect.png";
-import SubHeader from "./SubHeader";
 
 const Header = () => {
   return (
@@ -23,18 +22,26 @@ const Header = () => {
           </p>
         </div>
         <div className="flex flex-col items-center">
-          {buttonData.map((props, id) => {
-            return (
-              <Fragment key={id}>
-                <Link to="/register">
-                  {props.type === "A" && <DefaultBtn {...props} />}
-                </Link>
-                <Link to="/all-techies">
-                  {props.id === 2 && <DefaultBtn {...props} />}
-                </Link>
-              </Fragment>
-            );
-          })}
+          <Link to="/register">
+            <Button type="button" width="200px">
+              Join
+              <BsArrowRightShort />
+            </Button>
+          </Link>
+
+          <Link to="/all-techies">
+            <Button
+              type="button"
+              width="200px"
+              border="2px solid #10328c"
+              backgroundColor="#ffffff"
+              color="#10328c"
+              hoverColor="#ffffff"
+            >
+              View Members
+              <BsArrowRightShort />
+            </Button>
+          </Link>
         </div>
       </section>
 
