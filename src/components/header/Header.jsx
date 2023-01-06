@@ -23,7 +23,7 @@ const Header = () => {
         </div>
         <div className="flex flex-col items-center">
           <Link to="/register">
-            <Button type="button" width="200px">
+            <Button type="button">
               Join
               <BsArrowRightShort />
             </Button>
@@ -32,7 +32,6 @@ const Header = () => {
           <Link to="/all-techies">
             <Button
               type="button"
-              width="200px"
               border="2px solid #10328c"
               backgroundColor="#ffffff"
               color="#10328c"

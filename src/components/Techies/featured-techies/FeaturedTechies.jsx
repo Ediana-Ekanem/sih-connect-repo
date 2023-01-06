@@ -5,6 +5,7 @@ import useFetch from "../../../hooks/useFetch";
 
 //importing supporting components
 import LoadingSpinner from "../../UI/LoadingSpinner";
+import DisplayPhoto from "../DisplayPhoto";
 
 const url = "https://starthubconnect.adaptable.app/user/top-members";
 
@@ -26,11 +27,7 @@ const FeaturedTechies = () => {
               className=" m-[.7em] flex flex-col items-center justify-center "
               key={techie.id}
             >
-              <img
-                src={techie.profile_image}
-                alt="techie"
-                className="rounded-full"
-              />
+              <DisplayPhoto img={techie.profile_image} alt={"Display Photo"} />
               <h1 className="text-white font-[500] phone:text-[2vmin]  lg2:text-[2.5vmin]">
                 {techie.firstname + " " + techie.lastname}
               </h1>

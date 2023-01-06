@@ -13,7 +13,7 @@ const ButtonControl = styled.button`
     background-color: ${(props) => props.backgroundColor || "#10328C"};
     color: ${(props) => props.color || "#ffffff"};
     padding: 1em;
-    width: ${(props) => props.width};
+    width: ${(props) => props.width || "200px"};
     border-radius: 8px;
     margin: 1em;
     font-size: 1.2em;
