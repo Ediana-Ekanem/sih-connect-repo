@@ -1,5 +1,8 @@
 import React from "react";
 
+//importing components
+import DisplayPhoto from "./DisplayPhoto";
+
 const TechiesCard = ({
   profile_image,
   firstname,
@@ -8,27 +11,24 @@ const TechiesCard = ({
   experience_year_count,
 }) => {
   return (
-    <div>
-      <div className=" h-[340px] w-[250px] bg-[#ffffff] shadow relative">
-        <div className="py-8 px-5 justify-center items-center text-center">
-          <div className="h-24  w-24  absolute left-[3rem] ">
-            <img
-              src={profile_image}
-              className='h-[100%] w-[100%] object-fit" alt="images  rounded-full'
-            />
-          </div>
-          <div className="justify-center items-center text-center pt-[95px]">
-            <p className=" flex justify-center items-center text-center font-[Raleway] text[5px] font-[600] leading-[23px] ">
-              {firstname + " " + lastname}
-            </p>
-            <p className="font-[Raleway] text-[16px] font-[500] leading-[23px]  text-[#6B6B6B]  ">
-              {skills ? skills : "Skill"}
-            </p>
-            <p className="font-[Raleway] font-[500] text-[16px] leading-[33px] text-[#6B6B6B] mt-[30px]">
-              {experience_year_count ? experience_year_count : "Experience"}
-            </p>
-          </div>
-        </div>
+    <div className="flex flex-col shadow-md justify-center items-center text-center p-[1em] bg-white w-[220px] h-[306px]">
+      <DisplayPhoto
+        img={profile_image}
+        alt={"Display Photo"}
+        currentStatus={true}
+      />
+
+      <div className=" flex flex-col justify-center items-center text-center">
+        <p className=" text-[20px] font-[700] m-0 ">
+          {`${firstname} ${lastname}`}
+        </p>
+        <p className="text-[17px] font-[500] text-[#6B6B6B] m-0  ">
+          {skills ? skills : "Trainee"}
+        </p>
+
+        <p className="font-[500] text-[17px] text-[#6B6B6B] mt-[.5em]">
+          {experience_year_count ? experience_year_count : "<1 year(s)"}
+        </p>
       </div>
     </div>
   );
